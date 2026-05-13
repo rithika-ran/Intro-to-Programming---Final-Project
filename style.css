@@ -1,8 +1,8 @@
-
 body {
-    font-family: Playfair Display, sans-serif ;
+    font-family: Playfair Display, sans-serif;
     line-height: 1.6;
-    
+    background-color: #f4ecd8;
+
 }
 
 h1 {
@@ -19,7 +19,7 @@ h2 {
 h3 {
     font-size: 27px;
     font-weight: 300;
-    margin-bottom:10px ;
+    margin-bottom: 10px;
 }
 
 h4 {
@@ -36,12 +36,37 @@ p {
 }
 
 
+#navbar-section {
+    background: #ebdec1;
+
+}
+
+.col-25 {
+    flex: 0 0 20.8333%;
+    max-width: 20.8333%;
+}
+
+#main-section {
+    padding-left: 25px;
+    padding-top: 35px;
+}
+
+#search-input {
+    border-radius: 10px;
+    background-color: #ebdec1;
+    color: #3e2723;
+
+}
 
 
 
 .btn-genre a {
     text-decoration: none;
-    
+    background-color: #ebdec1;
+    color: #3e2723;
+    border: 3px solid #3e2723;
+    border-radius: 50px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin: 5px;
 }
-
-
