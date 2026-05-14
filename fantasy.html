@@ -1,23 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-</style>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find my Spine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
 </head>
 
 <body>
+    <div class="d-flex">
 
 
+        <!-- nav bar -->
+        <div class="p-3 vh-100 col-25" id="navbar-section">
+
+            <div class="d-flex flex-column h-100">
+
+                <!-- top  -->
+                <div>
+                    <div class="text-center h3 pb-1 pt-2 fw-bold">
+                        <i class="bi bi-book"></i> Find my Spine
+                    </div>
+                    <hr>
+                </div>
+
+                <!-- mid -->
+                <div class="d-flex flex-column" id="nav-links">
+                    <div class="link-box  p-3 mt-3">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="main.html"><i
+                                class="bi bi-house-heart"></i> Home</a>
+                    </div>
+                    <div class="link-box  p-3 mt-3">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-list.html"><i
+                                class="bi bi-list-stars"></i> Reading List</a>
+                    </div>
+                    <div class="link-box  mt-3 p-3 mb-5 ">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-log.html"><i
+                                class="bi bi-bookmark-heart"></i> Reading Log</a>
+                    </div>
 
 
+                </div>
+
+                <!--bottom  -->
+                <div style="height: auto;" class="mt-5">
+                    <div class="logo-img ">
+                        <img src="lokgo (1).png" alt="">
+                    </div>
+                    <hr>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="main-section" class="col-9">
+
+            <div id="main-header" class="d-flex">
+
+                <div class="col-5">
+
+                    <h1 class="fw-bolder hover-underline">Dive Into</h1>
+
+
+                </div>
+                <div id="search-header" class="col-7">
+
+                    <div class=" pt-2 search-box ">
+                        <input type="text" class="lighter" id="search-input" placeholder="Search for a book...">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="genre-mystery" class="mt-5">
+                <div class="back-btn">
+                     <a href="main.html">🡸</a>
+                     <h3 class=" underline fw-bold h2">Fantasy</h3>
+                   
+                </div>
+
+
+            </div>
+
+
+            <div id="mystery-books-container" class="books-grid"></div>
+
+        </div>
+        <!-- buttons -->
+
+    </div>
+
+
+     <!-- footer -->
+    <footer class=" mb-0 mt-0 d-flex flex-wrap justify-content-between align-items-center py-3 my-4" id="footer">
+        <p class="col-md-4 ps-4 mb-0 text-body-secondary"> ©Find my Spine</p>
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center link-body-emphasis text-decoration-none"
+            aria-label="footer">
+            <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+                <use xlink:href=" #bootstrap"></use>
+            </svg>
+        </a>
+        <ul class="nav col-md-4 justify-content-end" id="footer-links">
+            <li class="nav-item"><a href="main.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="reading-list.html" class="nav-link px-2 text-body-secondary">Reading List</a></li>
+            <li class="nav-item"><a href="reading-log.html" class="nav-link px-2 text-body-secondary">Reading Log</a></li>
+        </ul>
+    </footer>
+
+    
 </body>
 
 </html>
