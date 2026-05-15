@@ -105,7 +105,7 @@ p {
 }
 
 .back-btn a{
-     text-decoration: none;
+    text-decoration: none;
     background-color: #ebdec1;
     color: #3e2723;
     border: 3px solid #3e2723;
@@ -185,6 +185,9 @@ p {
     }
 }
 
+.bg-brown {
+    background-color: #ebdec1;
+}
 
 #footer{
     background-color: #d7c3a3;
@@ -192,5 +195,23 @@ p {
 }
 .footer-links a{
     color: #ebdec1;
+
+}
+
+.light-text {
+    color: rgb(101, 90, 75);
+}
+
+.empty-state{
+    border-radius: 15px;
+    border: 1.5px dashed #8d6e63;
+    background-color:#ebdec1;
+    opacity: 50%;
+    
+}
+
+.empty-state h4{
+    color:  #523b30;
+    opacity: 100%;
 
 }
