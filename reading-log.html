@@ -19,7 +19,7 @@
 
 
         <!-- nav bar -->
-        <div class="p-3 vh-100 col-25" id="navbar-section">
+        <div class="p-3  col-25" id="navbar-section">
 
             <div class="d-flex flex-column h-100">
 
@@ -50,7 +50,7 @@
                 </div>
 
                 <!--bottom  -->
-                <div style="height: auto;" class="mt-5 pt-4">
+                <div style="height: auto;" class="mt-5">
                     <div class="logo-img ">
                         <img src="lokgo (1).png" alt="">
                     </div>
@@ -67,8 +67,9 @@
 
                 <div class="col-5">
 
-                    <h1 class="fw-bolder hover-underline">Reading Log!</h1>
-                    <h3 class="fw-bold lead mt-2 light-text">Log your finished books!</h3>
+                    <h1 class="fw-bolder hover-underline mb-3">Reading Log</h1>
+                    <h4 class="fw-bold light-text">Log your finished books!</h4>
+
 
                 </div>
                 <div id="search-header" class="col-7">
@@ -81,61 +82,87 @@
                 </div>
             </div>
 
-            <div class="bg-brown d-flex">
-                <d class="flex-column">
-                      <h4 class="p-3">Add to Log</h4>
-
-                      <div class="d-flex flex-row">
-  <div class="p-2"></div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
 
 
-                    <!-- <div class="flex-row">
-                        <form action="submit">
-                           
+
+            <div class="bg-brown p-3" id="log-box">
+                <h4 class="mb-4 pt-2 h3 light-text fw-bolder underline">Add to Log</h4>
+
+                <form action="submit">
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label hover-underline">Book Name: </label>
+                            <input type="text" class="form-control text-dark " placeholder="e.g. The Adventures of Leia Pala"
+                                id="name-input" name="name" required>
+                        </div>
+
+                         <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label hover-underline">Author Name: </label>
+                            <input type="tel" class="form-control text-dark " placeholder="e.g. Rithika Ranjth"
+                                id="name-input" name="name" required>
+                        </div>
+
+                           <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label hover-underline">Rating: </label>
+                            <div class="star-rating justify-content-end" id="star-rating">
+                                <input type="radio" value="5" id="5-star" >
+                                <label for="5-star" class="pt-0">★</label>
+
+                                 <input type="radio" value="4" id="4-star" >
+                                <label for="4-star" class="pt-0">★</label>
+
+                                 <input type="radio" value="3" id="3-star" >
+                                <label for="3-star" class="pt-0">★</label>
+
+                                 <input type="radio" value="2" id="2-star" >
+                                <label for="2-star" class="pt-0">★</label>
+
+                                 <input type="radio" value="1" id="1-star" >
+                                <label for="1-star" class="pt-0">★</label>
                             </div>
+                        </div>
 
-                              <div class="col-4">
+                         <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label hover-underline">Finish Date: </label>
+                            <input type="date" class="form-control text-dark " 
+                                id="name-input" name="name" required>
+                        </div>
 
-                                <label for="name" class="form-label">Name:</label>
-                           <div class="input-group mb-4">
-                               <span class="input-group-text">
-                                   <i class="bi bi-envelope"></i>
-                               </span>
-                               <input type="text" class="form-control text-dark " placeholder="e.g. Princess Peach"
-                                   id="name-input" name="name" required>
-                               <span class="input-group-text">
-                                   <span class="tt" data-bs-placement="bottom" title="Enter the name of the organization">
-                                       <i class="bi bi-patch-question text-muted"></i>
-                                   </span>
-                               </span>
-                           </div>
-                            </div>
-
-
-                        </form>
+                        <div class=" mb-3">
+                            <label for="name" class="form-label hover-underline">Notes: </label>
+                            <textarea type="text" class="form-control text-dark pb-5" placeholder="Leia Pala's adventures consist of her jumping in muddy puddles and playing with racecars. Quite boring 🥱🤭"
+                                id="name-input" name="name" required></textarea>
+                        </div>
                     </div>
-               -->
-                </d>
-                
-                  
 
+                    <button type="submit" id="submit-btn">
+                        Log it!
+                    </button>
 
-            </div>
-            
+                </form>
+              
 
-
-            <div id="mystery-books-container" class="books-grid"></div>
 
         </div>
-        <!-- buttons -->
+
+        <div id="log-history">
+            <div class="text-center" >
+                <p class="pt-5 pb-2 h4">No Book Logs Yet!</p>
+                <div class="btn-genre  pb-5">
+                    <a href="main.html">Get to reading!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- buttons -->
 
     </div>
 
 
-     <!-- footer -->
+    <!-- footer -->
     <footer class=" mb-0 mt-0 d-flex flex-wrap justify-content-between align-items-center py-3 my-4" id="footer">
         <p class="col-md-4 ps-4 mb-0 text-body-secondary"> ©Find my Spine</p>
         <a href="/"
@@ -147,12 +174,14 @@
         </a>
         <ul class="nav col-md-4 justify-content-end" id="footer-links">
             <li class="nav-item"><a href="main.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="reading-list.html" class="nav-link px-2 text-body-secondary">Reading List</a></li>
-            <li class="nav-item"><a href="reading-log.html" class="nav-link px-2 text-body-secondary">Reading Log</a></li>
+            <li class="nav-item"><a href="reading-list.html" class="nav-link px-2 text-body-secondary">Reading List</a>
+            </li>
+            <li class="nav-item"><a href="reading-log.html" class="nav-link px-2 text-body-secondary">Reading Log</a>
+            </li>
         </ul>
     </footer>
 
-    
+
 </body>
 
 </html>
