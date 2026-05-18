@@ -292,3 +292,32 @@ p {
     top: 0;
     height: 100vh;
 }
+
+
+.empty-state {
+  display: flex;
+  border-radius: 15px;
+  border: dashed 3px  #5c403366  ;
+  padding: 50px;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  background-color: rgba(235, 222, 193, 0.5);
+ 
+}
+
+
+.empty-state a {
+   text-decoration: none;
+   background-color: #3e2723 ;
+   color: #ebdec1;
+   border: 3px solid #3e2723;
+   border-radius: 50px;
+   padding: 8px 16px;
+   display: inline-block;
+   margin: 5px;
+}
