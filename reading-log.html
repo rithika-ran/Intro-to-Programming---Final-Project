@@ -11,7 +11,8 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
+    <script src="script.js" defer></script>
+    <script src="log.js" defer></script>
 </head>
 
 <body>
@@ -88,51 +89,51 @@
             <div class="bg-brown p-3" id="log-box">
                 <h4 class="mb-4 pt-2 h3 light-text fw-bolder underline">Add to Log</h4>
 
-                <form action="submit">
+                <form action="submit" id="log-form">
                     <div class="row">
 
                         <div class="col-md-6 mb-3">
                             <label for="name" class="form-label hover-underline">Book Name: </label>
-                            <input type="text" class="form-control text-dark " placeholder="e.g. The Adventures of Leia Pala"
-                                id="name-input" name="name" required>
+                            <input type="text" class="form-control text-dark "
+                                placeholder="e.g. The Adventures of Leia Pala" id="name-input" name="name" required>
                         </div>
 
-                         <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="name" class="form-label hover-underline">Author Name: </label>
                             <input type="tel" class="form-control text-dark " placeholder="e.g. Rithika Ranjth"
-                                id="name-input" name="name" required>
+                                id="author-input" name="name" required>
                         </div>
 
-                           <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="name" class="form-label hover-underline">Rating: </label>
                             <div class="star-rating justify-content-end" id="star-rating">
-                                <input type="radio" value="5" id="5-star" >
+                                <input type="radio" value="5" id="5-star">
                                 <label for="5-star" class="pt-0">★</label>
 
-                                 <input type="radio" value="4" id="4-star" >
+                                <input type="radio" value="4" id="4-star">
                                 <label for="4-star" class="pt-0">★</label>
 
-                                 <input type="radio" value="3" id="3-star" >
+                                <input type="radio" value="3" id="3-star">
                                 <label for="3-star" class="pt-0">★</label>
 
-                                 <input type="radio" value="2" id="2-star" >
+                                <input type="radio" value="2" id="2-star">
                                 <label for="2-star" class="pt-0">★</label>
 
-                                 <input type="radio" value="1" id="1-star" >
+                                <input type="radio" value="1" id="1-star">
                                 <label for="1-star" class="pt-0">★</label>
                             </div>
                         </div>
 
-                         <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="name" class="form-label hover-underline">Finish Date: </label>
-                            <input type="date" class="form-control text-dark " 
-                                id="name-input" name="name" required>
+                            <input type="date" class="form-control text-dark " id="finish-date" name="name" required>
                         </div>
 
                         <div class=" mb-3">
                             <label for="name" class="form-label hover-underline">Notes: </label>
-                            <textarea type="text" class="form-control text-dark pb-5" placeholder="Leia Pala's adventures consist of her jumping in muddy puddles and playing with racecars. Quite boring 🥱🤭"
-                                id="name-input" name="name" required></textarea>
+                            <textarea type="text" class="form-control text-dark pb-5"
+                                placeholder="Leia Pala's adventures consist of her jumping in muddy puddles and playing with racecars. Quite boring 🥱🤭"
+                                id="notes-input" name="name" required></textarea>
                         </div>
                     </div>
 
@@ -141,20 +142,34 @@
                     </button>
 
                 </form>
-              
 
 
-        </div>
 
-        <div id="log-history">
-            <div class="text-center" >
-                <p class="pt-5 pb-2 h4">No Book Logs Yet!</p>
-                <div class="btn-genre  pb-5">
-                    <a href="index.html">Get to reading!</a>
+            </div>
+
+            <div id="log-history" class="text-center">
+                <div class="text-center">
+                    <div id="noBooks">
+                        <p class="pt-5 pb-2 h4">No Book Logs Yet!</p>
+                        <div class="btn-genre  pb-5">
+                            <a href="index.html">Get to reading!</a>
+                        </div>
+
+                        
+                    </div>
+                    <table id="logs-table" class="align-self-center">
+                        <tr class="h4">
+                            <th class="px-5">Rating</th>
+                            <th class="px-5">Book Name</th>
+                            <th class="px-5">Author</th>
+                            <th class="px-5">Date</th>
+                            <th class="px-5">Notes</th>
+                        </tr>
+            
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
     <!-- buttons -->

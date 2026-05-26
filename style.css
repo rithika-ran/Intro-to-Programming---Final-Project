@@ -261,6 +261,32 @@ p {
     opacity: 100%;
 }
 
+.card-outline {
+    background: #f4ecd8;
+    border: 1px solid #45320b;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 50px;
+}
+
+.card-outline img {
+     width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.card-outline .info {
+    padding: 12px;
+}
+
+.card-outline h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+
+
 #submit-btn {
       text-decoration: none;
     background-color: #3e2723;
@@ -278,7 +304,7 @@ p {
     color: #3e2723;
 }
 
-#log-history {
+#noBooks {
     background-color: #ebdec1;
   margin-top: 55px;
     border-radius: 25px;
@@ -292,6 +318,20 @@ p {
     top: 0;
     height: 100vh;
 }
+
+#logs {
+    background-color: #fff;
+    list-style-type: none;
+}
+
+#logs li {
+      border-top: 1px solid #e5e5e5;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    transition: all 0.2s;
+}
+
 
 
 .empty-state {
@@ -320,4 +360,32 @@ p {
    padding: 8px 16px;
    display: inline-block;
    margin: 5px;
+}
+
+#logs-table {
+    background-color: #ebdec1;
+    margin: 15px;
+    border-radius: 15px;
+    
+}
+
+#logs-table tr {
+    border-radius: 20px;
+    background-color: #cebfa6;
+   
+    
+}
+
+
+#logs-table th {
+    padding: 15px;
+   
+    
+}
+
+
+
+.hidden {
+    display: none;
+
 }
