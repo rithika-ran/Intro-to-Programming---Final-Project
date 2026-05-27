@@ -6,7 +6,7 @@ let logTable = document.getElementById('logs-table')
 let booksLog = JSON.parse(localStorage.getItem('booksLog')) || []
 
   window.addEventListener('DOMContentLoaded', (e) => {
-    for(let book of savedBooks ){
+    for(let book of booksLog ){
         addBooktoLog(book)
     }
   })
@@ -80,7 +80,7 @@ form.addEventListener('submit', (e) => {
         date: finishDate,
         notes: formNotes,
     }
-    // booksLog.push(newBook)
+    booksLog.push(newBook)
 
     // //stringfy & local storage
 

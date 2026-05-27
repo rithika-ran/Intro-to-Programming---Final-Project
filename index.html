@@ -22,47 +22,50 @@
 
     <div class="d-flex">
 
-        
+
         <!-- nav bar -->
-      <div class="p-3  col-25" id="navbar-section">
-    
-    <div class="d-flex flex-column h-100">
+        <div class="p-3  col-25" id="navbar-section">
 
-        <!-- top  -->
-        <div>
-            <div class="text-center h3 pb-1 pt-2 fw-bold">
-                <i class="bi bi-book"></i>   Find my Spine
+            <div class="d-flex flex-column h-100">
+
+                <!-- top  -->
+                <div>
+                    <div class="text-center h3 pb-1 pt-2 fw-bold">
+                        <i class="bi bi-book"></i> Find my Spine
+                    </div>
+                    <hr>
+                </div>
+
+                <!-- mid -->
+                <div class="d-flex flex-column" id="nav-links">
+                    <div class="link-box  p-3 mt-3">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="index.html"><i
+                                class="bi bi-house-heart"></i> Home</a>
+                    </div>
+                    <div class="link-box  p-3 mt-3">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-list.html"><i
+                                class="bi bi-list-stars"></i> Reading List</a>
+                    </div>
+                    <div class="link-box  mt-3 p-3 mb-5 ">
+                        <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-log.html"><i
+                                class="bi bi-bookmark-heart"></i> Reading Log</a>
+                    </div>
+
+
+                </div>
+
+                <!--bottom  -->
+                <div style="height: auto;" class="mt-5">
+                    <div class="logo-img ">
+                        <img src="lokgo (1).png" alt="">
+                    </div>
+                    <hr>
+
+                </div>
+
             </div>
-            <hr>
         </div>
 
-        <!-- mid -->
-        <div class="d-flex flex-column" id="nav-links">
-            <div class="link-box  p-3 mt-3">
-                <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="index.html"><i class="bi bi-house-heart"></i> Home</a>
-            </div>
-            <div class="link-box  p-3 mt-3">
-                <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-list.html"><i class="bi bi-list-stars"></i> Reading List</a>
-            </div>
-            <div class="link-box  mt-3 p-3 mb-5 ">
-                <a class="text-decoration-none link-dark  mt-5 mb-4 h5" href="reading-log.html"><i class="bi bi-bookmark-heart"></i> Reading Log</a>
-            </div>
-
-            
-             </div>
-
-       <!--bottom  -->
-        <div style="height: auto;" class="mt-5" >
-            <div class="logo-img ">
-                <img src="lokgo (1).png"  alt="">
-            </div>
-            <hr>
-        
-        </div>
-
-    </div>
-</div>
-       
         <div id="main-section" class="col-9">
 
             <div id="main-header" class="d-flex">
@@ -84,7 +87,7 @@
             </div>
 
             <div id="genre-section">
-                <h3 class="mt-5 mb-4 fw-bold underline" >Genre</h3>
+                <h3 class="mt-5 mb-4 fw-bold underline">Genre</h3>
 
                 <div class="btn-genre">
                     <a href="romance.html">Romance</a>
@@ -95,15 +98,14 @@
                     <a href="thriller.html">Thriller</a>
 
                 </div>
+              
             </div>
 
 
-            <div id="featured-books-container" class="books-grid"></div>
 
 
-            <div class="card card-outline"> hi
 
-            </div>
+            <div class="results-grid" id="results"></div>
         </div>
         <!-- buttons -->
 
@@ -126,11 +128,16 @@
         </a>
         <ul class="nav col-md-4 justify-content-end" id="footer-links">
             <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="reading-list.html" class="nav-link px-2 text-body-secondary">Reading List</a></li>
-            <li class="nav-item"><a href="reading-log.html" class="nav-link px-2 text-body-secondary">Reading Log</a></li>
+            <li class="nav-item"><a href="reading-list.html" class="nav-link px-2 text-body-secondary">Reading List</a>
+            </li>
+            <li class="nav-item"><a href="reading-log.html" class="nav-link px-2 text-body-secondary">Reading Log</a>
+            </li>
         </ul>
     </footer>
 
+    <script src="js/event_listeners.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="js/storage.js"></script>
 </body>
 
 </html>
