@@ -107,6 +107,9 @@
                         <div class="col-md-6 mb-3">
                             <label for="name" class="form-label hover-underline">Rating: </label>
                             <div class="star-rating justify-content-end" id="star-rating">
+                                 <input type="radio" value="6" id="6-star">
+                                <label for="6-star" class="pt-0">★</label>
+
                                 <input type="radio" value="5" id="5-star">
                                 <label for="5-star" class="pt-0">★</label>
 
@@ -146,7 +149,7 @@
 
 
             </div>
-
+             <h4 class="pt-2 h3 pb-0 mb-0 light-text fw-bolder hover-underline">Your Reading Log</h4>
             <div id="log-history" class="text-center">
                 <div class="text-center">
                     <div id="noBooks">
@@ -157,7 +160,7 @@
 
                         
                     </div>
-                    <table id="logs-table" class="align-self-center">
+                    <table id="logs-table" class="hidden">
                         <tr class="h4">
                             <th class="px-5">Rating</th>
                             <th class="px-5">Book Name</th>
@@ -165,7 +168,10 @@
                             <th class="px-5">Date</th>
                             <th class="px-5">Notes</th>
                         </tr>
-            
+                        <br>
+                        
+                        <!-- use js to add tr, and td inside -->
+                       
                     </table>
                 </div>
             </div>

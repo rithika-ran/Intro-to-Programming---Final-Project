@@ -365,27 +365,207 @@ p {
 #logs-table {
     background-color: #ebdec1;
     margin: 15px;
-    border-radius: 15px;
+    border: 3px solid #3e2723;
+    border-radius: 50px;
+     border-collapse: separate; 
+    border-spacing: 0;        
+    overflow: hidden;       
+  
     
 }
 
-#logs-table tr {
-    border-radius: 20px;
-    background-color: #cebfa6;
-   
-    
-}
 
 
 #logs-table th {
     padding: 15px;
-   
+   background-color: #e6d5b3;
+   border-bottom:3px solid #3e2723 ;
     
+}
+
+#logs-table td {
+    border-bottom: 0.5px solid #523b30;
 }
 
 
 
 .hidden {
     display: none;
+}
+    
+
+
+.results-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap: 20px;
+}
+
+
+.light-text {
+   color: rgb(101, 90, 75);
+}
+
+
+.empty-state{
+   border-radius: 15px;
+   border: 1.5px dashed #8d6e63;
+   background-color:#ebdec1;
+   opacity: 50%;
+  
+}
+
+
+.empty-state h4{
+   color:  #523b30;
+   opacity: 100%;
+
 
 }
+
+
+
+
+#log-box {
+   margin-top: 55px;
+   border-radius: 25px;
+   border: 3px solid #523b30;
+   box-shadow: 4px 4px  #523b30;
+   margin-bottom: 30px;
+}
+
+
+.star-rating {
+   display: flex;
+   flex-direction:row-reverse ;
+   font-size: 40px;
+   margin-top: -15px;
+}
+
+
+.star-rating input {
+   display: none;
+}
+
+
+.star-rating label{
+   color: rgb(101, 90, 75);
+   opacity: 50%;
+   padding: 8px;
+   transition: 0.2s ;
+   cursor: pointer;
+}
+
+
+.star-rating label:hover {
+   color: #3e2723;
+   opacity: 100%;
+}
+
+
+
+
+.star-rating label:hover ~ label {
+   color: #3e2723;
+   opacity: 100%;
+}
+
+
+
+
+.star-rating input:checked ~ label {
+     color: #3e2723;
+   opacity: 100%;
+}
+
+
+
+.show-card {
+   background: #ebdec1;
+   overflow: hidden;
+}
+
+
+.show-card img {
+   width: 100%;
+}
+
+.show-card .info {
+   padding: 12px;
+}
+
+
+.show-card h3 {
+   font-size: 1rem;
+}
+
+
+
+
+/* Style for the SEARCHES*/
+
+
+
+
+.books-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap: 20px;
+}
+
+
+/* Add Button */
+.add-btn {
+   background: #f4ecd8;
+   border: none;
+   font-size: 1rem;
+   cursor: pointer;
+   margin-top: 8px;
+   color: #3e2723;
+   font-family: 'Playfair Display', sans-serif;
+}
+
+
+.add-btn:hover {
+   color: #f4ecd8;
+   background: #3e2723;
+}
+
+
+/* Readlist Card */
+.readlist-card {
+   background: #ebdec1;
+   border-radius: 12px;
+   overflow: hidden;
+   cursor: pointer;
+   transition: transform 0.2s, border-color 0.2s;
+   box-shadow: #3e2723;
+
+
+}
+
+
+.readlist-card:hover {
+   border-color: #3e2723;
+   transform: translateY(-4px);
+  
+}
+
+
+.watchlist-card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+}
+
+
+.watchlist-card .info {
+   padding: 12px;
+}
+
+
+.watchlist-card h3 {
+   font-size: 1rem;
+   margin-bottom: 8px;}
+
+
