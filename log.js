@@ -5,14 +5,21 @@ let logTable = document.getElementById('logs-table')
 
 let booksLog = JSON.parse(localStorage.getItem('booksLog')) || []
 
-  window.addEventListener('DOMContentLoaded', (e) => {
-    for(let book of booksLog ){
-        addBooktoLog(book)
+window.addEventListener('DOMContentLoaded', (e) => {
+    if(booksLog.length > 0) {
+        logTable.classList.remove('hidden')
+        noBooks.classList.add('hidden')
+        for(book of booksLog){
+            addBooktoLog(book)
+        }
+
     }
   })
 
 function addBooktoLog(book){
             let nextRow = document.createElement('tr')
+
+            nextRow.innerHTML = text
         nextRow.innerHTML = `
            <td class="p-4">${book.rating}⭐</td>
            <td class="p-4">${book.name}</td>
@@ -22,6 +29,22 @@ function addBooktoLog(book){
     
         `
         logTable.appendChild(nextRow)
+
+        logTable.addEventListener("contextmenu", (e) => {
+        e.preventDefault() //Stops the browser menu
+        logTable.remove() //removes the item
+
+        //remove from the array too
+        const index = todos.indexOf(text)
+        if(index > -1) todos.splice(index,1) //removes from the array 
+
+
+        saveTodos() // overwrites the array with the updated values
+        if(todoList.children.length === 0){
+            showEmptyState()
+        }
+    })
+    return item 
 
 }
 
@@ -68,8 +91,7 @@ form.addEventListener('submit', (e) => {
     } 
 
     logTable.classList.remove('hidden')
-    noBooks.classList.add('hidden')
-
+        noBooks.classList.add('hidden')
 
     // create object 
 
