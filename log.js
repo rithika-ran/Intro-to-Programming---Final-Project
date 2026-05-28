@@ -114,6 +114,7 @@ logTable.addEventListener("contextmenu", (e) => {
 
     // let clickedIndex = logTable.indexOf(clickedBook) -1
     let clickedIndex = clickedBook.rowIndex -1
+    // console.log(clickedIndex)
     if(clickedIndex < 0) return
 
     booksLog.splice(clickedIndex,1)
