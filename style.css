@@ -130,7 +130,10 @@ p {
 
 .link-box:hover {
     border: 2px solid #3e2723;
+ 
 }
+
+
 
 
 .hover-underline {
@@ -203,6 +206,10 @@ p {
 
 .light-text {
     color: rgb(101, 90, 75);
+}
+
+.lighter-text {
+    color: #8f7d5f;
 }
 
 .empty-state {
