@@ -13,7 +13,7 @@ async function fetchFeatured() {
     const response = await fetch(url)
     const data = await response.json()
 
-    featuredBook = data.works.map(book => {
+let featuredBook = data.works.map(book => {
         let title = book.title
         let author;
         if (book.author_name) {
@@ -29,6 +29,7 @@ async function fetchFeatured() {
             cover = `https://placehold.co/200x300?text=Cover+Unavalible+:(`
 
         }
+
 
         let trendingBook = {
             title: title,
@@ -52,12 +53,14 @@ function displayFeatured(featuredBook) {
         card.className = "readlist"
     
         card.innerHTML = `
+        <div class="readlist-card">
             <img src="${book.cover}" alt="${book.title}">
-            <div class="info">
-                <h3>${book.title}</h3>
+            <div 
+                <h4>${book.title}</h4>
                 <h4>${book.author}</h4>
                 <h4>${book.date}</h4>
             </div>
+        </div> 
             `
             featuredBooksContainer.appendChild(card)
     }

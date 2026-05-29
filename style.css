@@ -447,6 +447,7 @@ p {
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
     box-shadow: #3e2723;
+    width: fit-content;
 
 
 }
@@ -461,7 +462,7 @@ p {
 
 .readlist-card img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -470,11 +471,11 @@ p {
     padding: 12px;
 }
 
-
+/* 
 .readlist-card h3 {
     font-size: 1rem;
     margin-bottom: 8px;
-}
+} */
 
 
 /* NO BOOK/ERROR MESSAGE */
