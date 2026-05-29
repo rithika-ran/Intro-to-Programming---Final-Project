@@ -13,11 +13,11 @@ async function fetchFeatured() {
     const response = await fetch(url)
     const data = await response.json()
 
-let featuredBook = data.works.map(book => {
+    let featuredBook = data.works.map(book => {
         let title = book.title
         let author;
         if (book.author_name) {
-            author = book.author_name.join(" ,")
+            author = book.author_name.join(" , ")
         } else {
             author = "Unknown"
         }
@@ -41,28 +41,32 @@ let featuredBook = data.works.map(book => {
         return trendingBook
     });
 
-return featuredBook
+    return featuredBook
 }
 
 function displayFeatured(featuredBook) {
     featuredBooksContainer.innerHTML = ""
 
-    for(let book of featuredBook){
+    for (let book of featuredBook) {
 
         const card = document.createElement('div')
         card.className = "readlist"
-    
+
         card.innerHTML = `
         <div class="readlist-card">
             <img src="${book.cover}" alt="${book.title}">
-            <div 
-                <h4>${book.title}</h4>
-                <h4>${book.author}</h4>
-                <h4>${book.date}</h4>
+            <div> 
+                <h3 class="ps-1 title-text fw-bold">${book.title}</h3>
+                <h5 class="lead ps-1">By: ${book.author}</h5>
+                <div class="d-flex justify-content-between align-item-center">
+                <h5 class="ps-1 lead">${book.date}</h5>
+                <button class="add-btn">✔</button>
+            </div>
+
             </div>
         </div> 
             `
-            featuredBooksContainer.appendChild(card)
+        featuredBooksContainer.appendChild(card)
     }
 
 }
