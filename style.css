@@ -424,6 +424,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 
@@ -462,7 +463,8 @@ p {
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
    box-shadow: 7px 5px #523b30;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     
 
 
@@ -500,3 +502,9 @@ p {
     color: #3e2723;
     font-size: 20px;
 }
+
+#readlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;}
