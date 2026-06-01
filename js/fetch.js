@@ -61,6 +61,8 @@ function displayBooks(data) {
 
         }
 
+        
+
 
         let isSaved = false
         for (let j = 0; j < readList.length; j++) {
@@ -78,13 +80,31 @@ function displayBooks(data) {
         card.className = "books-card";
 
 
-        card.innerHTML = `<img src="${imageUrl}" alt="${book_card.title}">
-       <div class="info">
-           <h3>${book_card.title}</h3>
-           <button class= "add-btn">${addIcon}</button>
-       </div>`;
+    //     card.innerHTML = `<img src="${imageUrl}" alt="${book_card.title}">
+    //    <div class="info">
+    //        <h3>${book_card.title}</h3>
+    //        <button class= "add-btn">${addIcon}</button>
+    //    </div>`;
+
+        card.innerHTML = `
+         <div class="readlist-card">
+             <img src="${imageUrl}" alt="${book_card.title}">
+             <div class="info"> 
+                 <h3 class="ps-1 title-text fw-bold">${book_card.title}</h3>
+                  <h5 class="lead ps-1">By: ${book_card.author_name ? book_card.author_name.join(" , ") : "Unknown"}</h5>
+                  
+                  <div class="d-flex justify-content-between align-item-center">
+                  <h5 class="ps-1 lead">${book_card.first_publish_year || "N/A"}</h5>
+                 
+                 <button class="add-btn">${addIcon}</button>
+             </div>
+
+             </div>
+         </div> 
+             `
 
 
+                         
         resultsContainer.appendChild(card)
 
 
