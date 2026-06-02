@@ -1,11 +1,4 @@
-input.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-        fetchBook();
-    }
-});
 
-
-loadReadlist()
 
 
 
@@ -61,7 +54,7 @@ function displayBooks(data) {
 
         }
 
-        
+
 
 
         let isSaved = false
@@ -80,11 +73,11 @@ function displayBooks(data) {
         card.className = "books-card";
 
 
-    //     card.innerHTML = `<img src="${imageUrl}" alt="${book_card.title}">
-    //    <div class="info">
-    //        <h3>${book_card.title}</h3>
-    //        <button class= "add-btn">${addIcon}</button>
-    //    </div>`;
+        //     card.innerHTML = `<img src="${imageUrl}" alt="${book_card.title}">
+        //    <div class="info">
+        //        <h3>${book_card.title}</h3>
+        //        <button class= "add-btn">${addIcon}</button>
+        //    </div>`;
 
         card.innerHTML = `
          <div class="readlist-card">
@@ -104,7 +97,7 @@ function displayBooks(data) {
              `
 
 
-                         
+
         resultsContainer.appendChild(card)
 
 
@@ -166,6 +159,8 @@ function renderReadList() {
 
 
 function toggleReadlist(book_card) {
+    console.log("book_card:", book_card)
+    console.log("readList:", readList)
     let found = false
     for (let i = 0; i < readList.length; i++) {
         if (readList[i].id === book_card.key || readList[i].id === book_card.id) { // ← add book_card.id
@@ -194,5 +189,12 @@ function toggleReadlist(book_card) {
     }
     saveReadlist();
     renderReadList();
-    displayBooks(allResults)
+    if (allResults.docs) {
+        displayBooks(allResults)
+    }
+    if (!featuredBooksContainer.classList.contains('hidden')) {
+        displayFeatured(lastFeatured)
+    }
+
+
 }

@@ -1,5 +1,6 @@
+const romancebtn = document.querySelector("#romance")
 
-window.addEventListener('DOMContentLoaded', async (e) => {
+romancebtn.addEventListener('click', async (e) => {
     const books = await fetchFeatured()
     lastFeatured = books
     displayFeatured(books)
@@ -7,8 +8,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
 })
 
-async function fetchFeatured() {
-    const url = "https://openlibrary.org/trending/daily.json"
+async function fetchRomance() {
+    const url = "https://openlibrary.org/subjects/romance.json"
 
     const response = await fetch(url)
     const data = await response.json()
