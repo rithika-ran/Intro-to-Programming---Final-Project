@@ -40,7 +40,7 @@ async function fetchFeatured() {
             cover: cover,
 
         }
-        console.log(trendingBook.key)
+        
 
         return trendingBook
     });

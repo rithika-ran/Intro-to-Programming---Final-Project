@@ -159,8 +159,6 @@ function renderReadList() {
 
 
 function toggleReadlist(book_card) {
-    console.log("book_card:", book_card)
-    console.log("readList:", readList)
     let found = false
     for (let i = 0; i < readList.length; i++) {
         if (readList[i].id === book_card.key || readList[i].id === book_card.id) { // ← add book_card.id
