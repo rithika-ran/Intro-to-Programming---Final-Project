@@ -1,20 +1,28 @@
-const romancebtn = document.querySelector("#romance")
+// const romancebtn = document.querySelector("#romance")
 
-romancebtn.addEventListener('click', async (e) => {
-    const books = await fetchFeatured()
+// romancebtn.addEventListener('click', async (e) => {
+//     const books = await fetchFeatured()
+//     lastFeatured = books
+//     displayFeatured(books)
+
+
+// })
+
+window.addEventListener('DOMContentLoaded', async (e) => {
+    const books = await fetchRomance()
     lastFeatured = books
-    displayFeatured(books)
+    displayRomance(books)
 
 
 })
 
 async function fetchRomance() {
-    const url = "https://openlibrary.org/subjects/romance.json"
+    const url = "https://openlibrary.org/subjects/romance.json?limit=50"
 
     const response = await fetch(url)
     const data = await response.json()
 
-    let featuredBook = data.works.map(book => {
+    let romanceBooks = data.works.map(book => {
         let title = book.title
         let author;
         if (book.author_name) {
@@ -24,8 +32,8 @@ async function fetchRomance() {
         }
         let date = book.first_publish_year || 'N/A'
         let cover;
-        if (book.cover_i) {
-            cover = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+        if (book.cover_id) {
+            cover = `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`
         } else {
             cover = `https://placehold.co/200x300?text=Cover+Unavalible+:(`
 
@@ -37,7 +45,7 @@ async function fetchRomance() {
             title: title,
             author: author,
             date: date,
-            cover_i: book.cover_i,
+            cover_id: book.cover_id,
             cover: cover,
 
         }
@@ -46,16 +54,16 @@ async function fetchRomance() {
         return trendingBook
     });
 
-    return featuredBook
+    return romanceBooks
 }
 
-function displayFeatured(featuredBook) {
-    const featuredBooksContainer = document.querySelector('#results')
-    if (!featuredBooksContainer) return
+function displayRomance(romanceBooks) {
+    const RomancebooksContainer = document.querySelector('#romance')
+    if (!RomancebooksContainer) return
 
-    featuredBooksContainer.innerHTML = ""
+    RomancebooksContainer.innerHTML = ""
 
-    for (let book of featuredBook) {
+    for (let book of romanceBooks) {
         let isSaved = false
         for (let j = 0; j < readList.length; j++) {
             if (readList[j].id === book.key) {
@@ -78,7 +86,7 @@ function displayFeatured(featuredBook) {
                 <button class="add-btn">${addIcon}</button>
             </div>
             `
-        featuredBooksContainer.appendChild(card)
+        RomancebooksContainer.appendChild(card)
         const removeBtn = card.querySelector(".add-btn")
         removeBtn.addEventListener("click", function () {
             toggleReadlist(book)

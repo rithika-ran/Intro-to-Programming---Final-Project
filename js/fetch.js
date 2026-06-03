@@ -148,6 +148,19 @@ function renderReadList() {
            <button class= "remove-btn">✔</button>
        </div>`;
 
+            //    card.innerHTML = `
+            // <img src="${imageUrl}" alt="${book_card.title}">
+            // <div> 
+            //     <h3 class="ps-1 title-text fw-bold">${book_card.title}</h3>
+            //     <h5 class="lead ps-1">By: ${book.author}</h5>
+            //     <div class="d-flex justify-content-between align-item-center">
+            //     <h5 class="ps-1 lead">${book_card.first_publish_year || "N/A"}</h5>
+            //      <button class= "remove-btn">✔</button>
+            
+            // </div>
+            // `
+
+
 
         readListContainer.appendChild(card)
         const removeBtn = card.querySelector(".remove-btn")
