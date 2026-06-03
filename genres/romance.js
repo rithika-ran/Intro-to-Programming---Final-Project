@@ -18,15 +18,15 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
 async function fetchRomance() {
     const url = "https://openlibrary.org/subjects/romance.json?limit=50"
-
     const response = await fetch(url)
     const data = await response.json()
-
+    
     let romanceBooks = data.works.map(book => {
+        console.log(book)
         let title = book.title
         let author;
-        if (book.author_name) {
-            author = book.author_name.join(" , ")
+        if (book.authors) {
+            author = book.authors.map(author => author.name).join(" , ") 
         } else {
             author = "Unknown"
         }
