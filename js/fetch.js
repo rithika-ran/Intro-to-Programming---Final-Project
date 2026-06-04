@@ -193,8 +193,8 @@ function toggleReadlist(book_card) {
         if (book_card.cover_i) {
             imageUrl = "https://covers.openlibrary.org/b/id/" + book_card.cover_i + "-M.jpg";
         }
-        console.log("cover:", book_card.cover)
-        console.log("cover_i:", book_card.cover_i)
+        console.log("looking for:", book_card.key, book_card.id)
+        console.log("readList ids:", readList.map(b => b.id))
         readList.push({
             id: book_card.key,
             title: book_card.title,
@@ -213,9 +213,8 @@ function toggleReadlist(book_card) {
             displayFeatured(lastFeatured)
         }
     }
-    if (genreReadlist.works) {
-        if (document.querySelector("#romance")) 
-            { displayRomance(genreReadlist) }
+    if (genreReadlist.length > 0) {
+        if (document.querySelector("#romance")) { displayRomance(genreReadlist) }
         if (document.querySelector("#fantasy")) {
             displayFantasy(genreReadlist)
         }

@@ -22,7 +22,6 @@ async function fetchRomance() {
     const data = await response.json()
     
     let romanceBooks = data.works.map(book => {
-        console.log(book)
         let title = book.title
         let author;
         if (book.authors) {
