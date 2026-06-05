@@ -30,7 +30,7 @@ h4 {
 }
 
 .title-text {
-      font-size: 24px;
+    font-size: 24px;
     font-weight: 300;
     margin-bottom: 10px;
 }
@@ -136,7 +136,7 @@ p {
 
 .link-box:hover {
     border: 2px solid #3e2723;
- 
+
 }
 
 
@@ -436,7 +436,7 @@ p {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 8px;
-    
+
     color: #3e2723;
     font-family: Playfair Display, sans-serif;
     border-radius: 5px;
@@ -447,10 +447,11 @@ p {
     color: #f4ecd8;
     background: #3e2723;
 }
+
 /* Remove Btn */
-.remove-btn{
-   background-color: #3e2723;
-   color: #f4ecd8;
+.remove-btn {
+    background-color: #3e2723;
+    color: #f4ecd8;
 }
 
 
@@ -463,10 +464,10 @@ p {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
-   box-shadow: 7px 5px #523b30;
+    box-shadow: 7px 5px #523b30;
     width: 100%;
     max-width: 250px;
-    
+
 
 
 }
@@ -508,4 +509,51 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 20px;}
+    margin-top: 20px;
+}
+
+
+
+
+#log-history {
+    overflow-x: auto;
+    /* max-width: 100%; */
+}
+
+@media (max-width: 768px) {
+
+
+    #logs-table {
+        margin: 8px;
+        border-radius: 15px;
+    }
+
+    #logs-table th {
+        padding: 8px !important;
+        /* font-size: 0.85rem; */
+
+    }
+
+    #logs-table tr {
+        padding: 6px 8px !important;
+        /* font-size: 0.5rem; */
+
+    }
+
+    #search-input {
+      margin-left: 50px;
+       
+    }
+
+    #nav-text{
+        display: none;
+    }
+
+    .logo-img img{
+        margin-left: 15px;
+    }
+
+    .bi{
+        font-size: 30px;
+    }
+}
