@@ -10,7 +10,7 @@
 
 window.addEventListener('DOMContentLoaded', async (e) => {
     const books = await fetchRomance()
-    lastFeatured = books
+    genreReadlist = books
     displayRomance(books)
 
 
@@ -22,7 +22,6 @@ async function fetchRomance() {
     const data = await response.json()
     
     let romanceBooks = data.works.map(book => {
-        console.log(book)
         let title = book.title
         let author;
         if (book.authors) {
@@ -45,7 +44,7 @@ async function fetchRomance() {
             title: title,
             author: author,
             date: date,
-            cover_id: book.cover_id,
+            cover_id: book.cover_i,
             cover: cover,
 
         }

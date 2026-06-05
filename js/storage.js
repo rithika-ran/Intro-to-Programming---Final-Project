@@ -7,6 +7,7 @@ const readListContainer = document.querySelector("#readlist-container")
 let readList =[]
 let allResults = []
 let lastFeatured = []
+let genreReadlist = []
 
 
 function loadReadlist(){

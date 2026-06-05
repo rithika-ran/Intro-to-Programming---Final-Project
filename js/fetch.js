@@ -103,6 +103,7 @@ function displayBooks(data) {
 
         const addBtn = card.querySelector(".add-btn")
         addBtn.addEventListener("click", function () {
+            book_card.cover = imageUrl
             toggleReadlist(book_card)
         })
 
@@ -148,17 +149,17 @@ function renderReadList() {
            <button class= "remove-btn">✔</button>
        </div>`;
 
-            //    card.innerHTML = `
-            // <img src="${imageUrl}" alt="${book_card.title}">
-            // <div> 
-            //     <h3 class="ps-1 title-text fw-bold">${book_card.title}</h3>
-            //     <h5 class="lead ps-1">By: ${book.author}</h5>
-            //     <div class="d-flex justify-content-between align-item-center">
-            //     <h5 class="ps-1 lead">${book_card.first_publish_year || "N/A"}</h5>
-            //      <button class= "remove-btn">✔</button>
-            
-            // </div>
-            // `
+        //    card.innerHTML = `
+        // <img src="${imageUrl}" alt="${book_card.title}">
+        // <div> 
+        //     <h3 class="ps-1 title-text fw-bold">${book_card.title}</h3>
+        //     <h5 class="lead ps-1">By: ${book.author}</h5>
+        //     <div class="d-flex justify-content-between align-item-center">
+        //     <h5 class="ps-1 lead">${book_card.first_publish_year || "N/A"}</h5>
+        //      <button class= "remove-btn">✔</button>
+
+        // </div>
+        // `
 
 
 
@@ -188,10 +189,12 @@ function toggleReadlist(book_card) {
         }
         readList = newReadlist
     } else {
-        let imageUrl = "https://placehold.co/300x200?text=No+Image";
+        let imageUrl = book_card.cover || "https://placehold.co/300x200?text=No+Image";
         if (book_card.cover_i) {
             imageUrl = "https://covers.openlibrary.org/b/id/" + book_card.cover_i + "-M.jpg";
         }
+        console.log("looking for:", book_card.key, book_card.id)
+        console.log("readList ids:", readList.map(b => b.id))
         readList.push({
             id: book_card.key,
             title: book_card.title,
@@ -203,8 +206,36 @@ function toggleReadlist(book_card) {
     if (allResults.docs) {
         displayBooks(allResults)
     }
-    if (!featuredBooksContainer.classList.contains('hidden')) {
-        displayFeatured(lastFeatured)
+
+    if (lastFeatured.length > 0) {
+        const featuredBooksContainer = document.querySelector('#results')
+        if (featuredBooksContainer && !featuredBooksContainer.classList.contains('hidden')) {
+            displayFeatured(lastFeatured)
+        }
+    }
+    if (genreReadlist.length > 0) {
+        if (document.querySelector("#romance")) { displayRomance(genreReadlist) }
+        if (document.querySelector("#fantasy")) {
+            displayFantasy(genreReadlist)
+        }
+        if (document.querySelector("#historical")) {
+            displayHistorical(genreReadlist)
+        }
+        if (document.querySelector("#historical")) {
+            displayMystery(genreReadlist)
+        }
+        if (document.querySelector("#historical")) {
+            displayScifi(genreReadlist)
+        }
+
+        if (document.querySelector("#historical")) {
+            displayThriller(genreReadlist)
+
+        }
+
+
+
+
     }
 
 
