@@ -2,7 +2,7 @@ let featuredBooksContainer = document.querySelector('#results')
 
 
 
-
+if(input){
 input.addEventListener("keypress", function (e) {
    if (e.key === "Enter") {
       fetchBook();
@@ -11,6 +11,7 @@ input.addEventListener("keypress", function (e) {
 
    }
 });
+}
 
 
 loadReadlist()
