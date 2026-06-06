@@ -436,23 +436,36 @@ p {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 
     color: #3e2723;
-    font-family: Playfair Display, sans-serif;
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 10px 12px;
+   
 }
-
-
 .add-btn:hover {
-    color: #f4ecd8;
+    color:#f4ecd8;
     background: #3e2723;
 }
+
+
+
 
 /* Remove Btn */
 .remove-btn {
     background-color: #3e2723;
     color: #f4ecd8;
+    padding: 10px 12px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+
 }
+
+
+
 
 
 

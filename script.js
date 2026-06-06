@@ -1,5 +1,9 @@
 
+const featuredBooksContainer = document.querySelector('#results')
+
 window.addEventListener('DOMContentLoaded', async (e) => {
+    featuredBooksContainer.innerHTML = `<div class="problem"> Loading...</div>`
+
     const books = await fetchFeatured()
     lastFeatured = books
     displayFeatured(books)
@@ -40,7 +44,7 @@ async function fetchFeatured() {
             cover: cover,
 
         }
-        
+
 
         return trendingBook
     });
@@ -49,7 +53,7 @@ async function fetchFeatured() {
 }
 
 function displayFeatured(featuredBook) {
-    const featuredBooksContainer = document.querySelector('#results')
+
     if (!featuredBooksContainer) return
 
     featuredBooksContainer.innerHTML = ""

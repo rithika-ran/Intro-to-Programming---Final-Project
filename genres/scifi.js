@@ -7,10 +7,11 @@
 
 
 // })
+const scifiBooksContainer = document.querySelector('#scifi')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
     const books = await fetchScifi()
-    lastFeatured = books
+    genreReadlist = books
     displayScifi(books)
 
 
@@ -20,13 +21,13 @@ async function fetchScifi() {
     const url = "https://openlibrary.org/subjects/science_fiction.json?limit=50"
     const response = await fetch(url)
     const data = await response.json()
-    
+
     let scifiBooks = data.works.map(book => {
         console.log(book)
         let title = book.title
         let author;
         if (book.authors) {
-            author = book.authors.map(author => author.name).join(" , ") 
+            author = book.authors.map(author => author.name).join(" , ")
         } else {
             author = "Unknown"
         }
@@ -58,7 +59,7 @@ async function fetchScifi() {
 }
 
 function displayScifi(scifiBooks) {
-    const scifiBooksContainer = document.querySelector('#scifi')
+
     if (!scifiBooksContainer) return
 
     scifiBooksContainer.innerHTML = ""

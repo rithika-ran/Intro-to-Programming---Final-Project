@@ -7,10 +7,13 @@
 
 
 // })
+const historicalbooksContainer = document.querySelector('#historical')
+
 
 window.addEventListener('DOMContentLoaded', async (e) => {
+    historicalbooksContainer.innerHTML= `<div class="problem"> Loading...</div>`
     const books = await fetchHistorical()
-    lastFeatured = books
+    genreReadlist = books
     displayHistorical(books)
 
 
@@ -21,12 +24,12 @@ async function fetchHistorical() {
     const response = await fetch(url)
     const data = await response.json()
     let historicalBooks = data.works.map(book => {
-       
+
         console.log(book)
         let title = book.title
         let author;
         if (book.authors) {
-            author = book.authors.map(author => author.name).join(" , ") 
+            author = book.authors.map(author => author.name).join(" , ")
         } else {
             author = "Unknown"
         }
@@ -58,7 +61,6 @@ async function fetchHistorical() {
 }
 
 function displayHistorical(historicalBooks) {
-    const historicalbooksContainer = document.querySelector('#historical')
     if (!historicalbooksContainer) return
 
     historicalbooksContainer.innerHTML = ""

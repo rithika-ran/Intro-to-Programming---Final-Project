@@ -7,10 +7,12 @@
 
 
 // })
+ const thrillerBooksContainer = document.querySelector('#thriller')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
+    thrillerBooksContainer.innerHTML= `<div class="problem"> Loading...</div>`
     const books = await fetchThriller()
-    lastFeatured = books
+    genreReadlist = books
     displayThriller(books)
 
 
@@ -58,7 +60,7 @@ async function fetchThriller() {
 }
 
 function displayThriller(thrillerBooks) {
-    const thrillerBooksContainer = document.querySelector('#thriller')
+   
     if (!thrillerBooksContainer) return
 
     thrillerBooksContainer.innerHTML = ""

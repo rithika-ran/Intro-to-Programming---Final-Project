@@ -7,10 +7,12 @@
 
 
 // })
+const mysteryBooksContainer = document.querySelector('#mystery')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
+    mysteryBooksContainer.innerHTML = `<div class="problem"> Loading...</div>`
     const books = await fetchMystery()
-    lastFeatured = books
+    genreReadlist = books
     displayMystery(books)
 
 
@@ -20,13 +22,13 @@ async function fetchMystery() {
     const url = "https://openlibrary.org/subjects/mystery.json?limit=50"
     const response = await fetch(url)
     const data = await response.json()
-    
+
     let mysteryBooks = data.works.map(book => {
         console.log(book)
         let title = book.title
         let author;
         if (book.authors) {
-            author = book.authors.map(author => author.name).join(" , ") 
+            author = book.authors.map(author => author.name).join(" , ")
         } else {
             author = "Unknown"
         }
@@ -58,7 +60,7 @@ async function fetchMystery() {
 }
 
 function displayMystery(mysteryBooks) {
-    const mysteryBooksContainer = document.querySelector('#mystery')
+
     if (!mysteryBooksContainer) return
 
     mysteryBooksContainer.innerHTML = ""

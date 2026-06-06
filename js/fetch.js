@@ -173,6 +173,7 @@ function renderReadList() {
 
 
 function toggleReadlist(book_card) {
+    const bookId = book_card.key || book_card.id
     let found = false
     for (let i = 0; i < readList.length; i++) {
         if (readList[i].id === book_card.key || readList[i].id === book_card.id) { // ← add book_card.id
@@ -221,14 +222,14 @@ function toggleReadlist(book_card) {
         if (document.querySelector("#historical")) {
             displayHistorical(genreReadlist)
         }
-        if (document.querySelector("#historical")) {
+        if (document.querySelector("#mystery")) {
             displayMystery(genreReadlist)
         }
-        if (document.querySelector("#historical")) {
+        if (document.querySelector("#scifi")) {
             displayScifi(genreReadlist)
         }
 
-        if (document.querySelector("#historical")) {
+        if (document.querySelector("#thriller")) {
             displayThriller(genreReadlist)
 
         }

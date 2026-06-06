@@ -7,10 +7,12 @@
 
 
 // })
+  const fantasyBooksContainer = document.querySelector('#fantasy')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
+    fantasyBooksContainer.innerHTML= `<div class="problem"> Loading...</div>`
     const books = await fetchFantasy()
-    lastFeatured = books
+    genreReadlist = books
     displayFantasy(books)
 
 
@@ -58,7 +60,6 @@ async function fetchFantasy() {
 }
 
 function displayFantasy(fantasyBooks) {
-    const fantasyBooksContainer = document.querySelector('#fantasy')
     if (!fantasyBooksContainer) return
 
     fantasyBooksContainer.innerHTML = ""

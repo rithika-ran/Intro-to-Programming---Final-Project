@@ -7,8 +7,10 @@
 
 
 // })
+const RomancebooksContainer = document.querySelector('#romance')
 
 window.addEventListener('DOMContentLoaded', async (e) => {
+    RomancebooksContainer.innerHTML = `<div class="problem"> Loading...</div>`
     const books = await fetchRomance()
     genreReadlist = books
     displayRomance(books)
@@ -20,12 +22,12 @@ async function fetchRomance() {
     const url = "https://openlibrary.org/subjects/romance.json?limit=50"
     const response = await fetch(url)
     const data = await response.json()
-    
+
     let romanceBooks = data.works.map(book => {
         let title = book.title
         let author;
         if (book.authors) {
-            author = book.authors.map(author => author.name).join(" , ") 
+            author = book.authors.map(author => author.name).join(" , ")
         } else {
             author = "Unknown"
         }
@@ -57,7 +59,7 @@ async function fetchRomance() {
 }
 
 function displayRomance(romanceBooks) {
-    const RomancebooksContainer = document.querySelector('#romance')
+
     if (!RomancebooksContainer) return
 
     RomancebooksContainer.innerHTML = ""
